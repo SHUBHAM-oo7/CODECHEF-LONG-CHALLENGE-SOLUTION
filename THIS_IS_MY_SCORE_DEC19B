@@ -1,0 +1,12 @@
+for _ in range(int(input())):
+    n=int(input())
+    l=[0]*8
+    for i in range(n):
+        a,b=map(int,input().split())
+        a=a-1
+        if(a<=7 and l[a]<b):
+            l[a]=b
+    s=sum(l)
+    print(s)
+            
+        
