@@ -1,0 +1,37 @@
+for _ in range(int(input())):
+    n=int(input())
+    s=input()
+    s=list(s)
+    alist="abcdefghijklmnopqrstuvwxyz"
+    alist=list(alist)
+    a1=[0]*26
+    a2=[0]*26
+    a3=[0]*26
+    c=999999999
+    s1=list(s)
+    for i in range(len(s)):
+        if(a1[alist.index(s[i])]==0):
+            a1[alist.index(s[i])]+=1
+            a2[alist.index(s[i])]=i
+        elif(a1[alist.index(s[i])]==1):
+            a1[alist.index(s[i])]+=1
+            a2[alist.index(s[i])]=i-a2[alist.index(s[i])]
+            a3[alist.index(s[i])]=i
+        else:
+            a1[alist.index(s[i])]+=1
+            a2[alist.index(s[i])]=min((i-a3[alist.index(s[i])]),a2[alist.index(s[i])])
+            a3[alist.index(s[i])]=i
+    for i in range(len(a1)):
+        if(a1[i]>=2):
+            c=min(c,a2[i])
+    if(len(s)==len(list(set(s)))):
+        print(0)
+    elif(len(list(set(s)))==1):
+        print(n-1)
+    else:
+        c=n-c
+        print(c)
+        
+            
+    
+        
