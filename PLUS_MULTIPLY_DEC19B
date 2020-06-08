@@ -1,0 +1,18 @@
+import math
+for _ in range (int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    c=l.count(2)
+    c1=l.count(0)
+    m=0
+    m1=0
+    if(c==0 or c==1):
+        m=0
+    else:
+        m=(math.factorial(c)//(math.factorial(c-2)*math.factorial(2)))
+    if(c1==0 or c1==1):
+        m1=0
+    else:
+        m1=(math.factorial(c1)//(math.factorial(c1-2)*math.factorial(2)))
+    m=m1+m
+    print(m)
