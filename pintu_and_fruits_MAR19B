@@ -1,0 +1,18 @@
+for _ in range(int(input())):
+    n,m=map(int,input().split())
+    a1=list(map(int,input().split()))
+    a2=list(map(int,input().split()))
+    l=[0]*(m+1)
+    c=9999999999999
+    k=0
+    for i in range(len(l)):
+        for j in range(len(a1)):
+            if(a1[j]==i):
+                l[i]+=a2[j]
+    #print(l)
+    for i in range(len(l)):
+        if i in a1:
+            c=min(c,l[i])
+    print(c)
+            
+    
