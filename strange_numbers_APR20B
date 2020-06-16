@@ -1,0 +1,29 @@
+import math
+for _ in range(int(input())):
+    x,y=map(int,input().split())
+    l=[]
+    c=0
+    if(y==1):
+        print(1)
+    elif(y==2):
+        f=0
+        for i in range(2,int(math.sqrt(x))+1):
+            if(x%i==0):
+                f=1
+                break
+        if(f==1):
+            print(1)
+        else:
+            print(0)
+    else:
+        for i in range(2,int(math.sqrt(x))+1):
+            while(x%i==0 and x>1):
+                l.append(i)
+                x=x//i
+        if(x>1):
+            l.append(2)
+        if(y<=len(l)):
+            print(1)
+        else:
+            print(0)
+    
